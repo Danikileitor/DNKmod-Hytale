@@ -1,2 +1,2 @@
 # DNKmod-Hytale
-Testing Hytale modding
+Testing Hytale modding capabilities.
