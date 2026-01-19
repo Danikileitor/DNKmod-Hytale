@@ -18,7 +18,7 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 public class PlayerInfo extends AbstractTargetPlayerCommand {
 
     public PlayerInfo() {
-        super("PlayerInfo", "Get target player info");
+        super("PlayerInfo", "Get player info");
     }
 
     @Override
@@ -27,8 +27,6 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
             @Nonnull Store<EntityStore> store) {
 
         Player player = store.getComponent(ref, Player.getComponentType());
-        UUIDComponent component = store.getComponent(ref, UUIDComponent.getComponentType());
-        TransformComponent transform = store.getComponent(ref, TransformComponent.getComponentType());
 
         try {
             if (targetRef == null) {
@@ -43,8 +41,17 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         Player targetPlayer = store.getComponent(targetRef, Player.getComponentType());
         UUIDComponent targetComponent = store.getComponent(targetRef, UUIDComponent.getComponentType());
         TransformComponent targetTransform = store.getComponent(targetRef, TransformComponent.getComponentType());
+        World targetWorld = targetPlayer.getWorld();
 
         player.sendMessage(Message.raw("UUID: " + targetComponent.getUuid()));
+        player.sendMessage(Message.raw("UUID: " + targetPlayer.getDisplayName()));
         player.sendMessage(Message.raw("Position: " + targetTransform.getPosition()));
+
+        if (targetWorld != null) {
+            player.sendMessage(Message.raw("World: " + targetWorld.getName()));
+            player.sendMessage(Message.raw("Players: " + targetWorld.getPlayerCount()));
+        } else {
+            player.sendMessage(Message.raw("World: Unknown"));
+        }
     }
 }
