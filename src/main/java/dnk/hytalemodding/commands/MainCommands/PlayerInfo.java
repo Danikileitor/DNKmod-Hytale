@@ -21,7 +21,7 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 public class PlayerInfo extends AbstractTargetPlayerCommand {
 
     public PlayerInfo() {
-        super("PlayerInfo", "Get player info");
+        super("playerinfo", "Get player info");
     }
 
     @Override
