@@ -44,14 +44,16 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         World targetWorld = targetPlayer.getWorld();
 
         player.sendMessage(Message.raw("UUID: " + targetComponent.getUuid()));
-        player.sendMessage(Message.raw("UUID: " + targetPlayer.getDisplayName()));
-        player.sendMessage(Message.raw("Position: " + targetTransform.getPosition()));
+        player.sendMessage(Message.raw("Name: " + targetPlayer.getDisplayName()));
+        player.sendMessage(Message.raw("GameMode: " + targetPlayer.getGameMode()));
 
+        player.sendMessage(Message.raw("Position: " + targetTransform.getPosition()));
         if (targetWorld != null) {
             player.sendMessage(Message.raw("World: " + targetWorld.getName()));
             player.sendMessage(Message.raw("Players: " + targetWorld.getPlayerCount()));
         } else {
             player.sendMessage(Message.raw("World: Unknown"));
         }
+
     }
 }

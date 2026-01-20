@@ -8,6 +8,10 @@ public class JoinEvent {
 
     public static void onPlayerReady(PlayerReadyEvent event) {
         Player player = event.getPlayer();
-        player.sendMessage(Message.raw("Welcome " + player.getDisplayName()));
+        if (player.isFirstSpawn()) {
+            player.sendMessage(Message.raw("Welcome to the server " + player.getDisplayName() + "!"));
+        } else {
+            player.sendMessage(Message.raw("Welcome " + player.getDisplayName()));
+        }
     }
 }
