@@ -11,6 +11,9 @@ import com.hypixel.hytale.server.core.command.system.basecommands.AbstractTarget
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
+import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
+import com.hypixel.hytale.server.core.modules.entitystats.EntityStatValue;
+import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntityStatTypes;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -43,6 +46,12 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         TransformComponent targetTransform = store.getComponent(targetRef, TransformComponent.getComponentType());
         World targetWorld = targetPlayer.getWorld();
 
+        @SuppressWarnings("null")
+        EntityStatMap targetPlayerStats = store.getComponent(targetRef, EntityStatMap.getComponentType());
+        EntityStatValue targetPlayerHealth = targetPlayerStats.get(DefaultEntityStatTypes.getHealth());
+        EntityStatValue targetPlayerStamina = targetPlayerStats.get(DefaultEntityStatTypes.getStamina());
+        EntityStatValue targetPlayerMana = targetPlayerStats.get(DefaultEntityStatTypes.getMana());
+
         player.sendMessage(Message.raw("UUID: " + targetComponent.getUuid()));
         player.sendMessage(Message.raw("Name: " + targetPlayer.getDisplayName()));
         player.sendMessage(Message.raw("GameMode: " + targetPlayer.getGameMode()));
@@ -55,5 +64,9 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         } else {
             player.sendMessage(Message.raw("World: Unknown"));
         }
+
+        player.sendMessage(Message.raw("Health: " + targetPlayerHealth));
+        player.sendMessage(Message.raw("Stamina: " + targetPlayerStamina));
+        player.sendMessage(Message.raw("Mana: " + targetPlayerMana));
     }
 }
