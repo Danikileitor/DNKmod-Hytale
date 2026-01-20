@@ -50,6 +50,7 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         EntityStatValue targetPlayerHealth = targetPlayerStats.get(DefaultEntityStatTypes.getHealth());
         EntityStatValue targetPlayerStamina = targetPlayerStats.get(DefaultEntityStatTypes.getStamina());
         EntityStatValue targetPlayerMana = targetPlayerStats.get(DefaultEntityStatTypes.getMana());
+        EntityStatValue targetPlayerAmmo = targetPlayerStats.get(DefaultEntityStatTypes.getAmmo());
 
         player.sendMessage(Message.raw("UUID: " + targetComponent.getUuid()));
         player.sendMessage(Message.raw("Name: " + targetPlayer.getDisplayName()));
@@ -67,5 +68,6 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         player.sendMessage(Message.raw("Health: " + (targetPlayerHealth != null ? targetPlayerHealth + "(" + targetPlayerHealth.asPercentage() + ")" : "Unknown")));
         player.sendMessage(Message.raw("Stamina: " + (targetPlayerStamina != null ? targetPlayerStamina + "(" + targetPlayerStamina.asPercentage() + ")" : "Unknown")));
         player.sendMessage(Message.raw("Mana: " + (targetPlayerMana != null ? targetPlayerMana + "(" + targetPlayerMana.asPercentage() + ")" : "Unknown")));
+        player.sendMessage(Message.raw("Ammo: " + (targetPlayerAmmo != null ? targetPlayerAmmo + "(" + targetPlayerAmmo.asPercentage() + ")" : "Unknown")));
     }
 }
