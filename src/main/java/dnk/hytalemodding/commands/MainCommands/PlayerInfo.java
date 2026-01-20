@@ -25,9 +25,8 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
     }
 
     @Override
-    protected void execute(@Nonnull CommandContext commandContext, @Nullable Ref<EntityStore> targetRef,
-            @Nonnull Ref<EntityStore> ref, @Nonnull PlayerRef playerRef, @Nonnull World world,
-            @Nonnull Store<EntityStore> store) {
+    protected void execute(@Nonnull CommandContext commandContext, @Nullable Ref<EntityStore> targetRef, @Nonnull Ref<EntityStore> ref, @Nonnull PlayerRef playerRef,
+            @Nonnull World world, @Nonnull Store<EntityStore> store) {
 
         Player player = store.getComponent(ref, Player.getComponentType());
 
@@ -65,8 +64,8 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
             player.sendMessage(Message.raw("World: Unknown"));
         }
 
-        player.sendMessage(Message.raw("Health: " + targetPlayerHealth));
-        player.sendMessage(Message.raw("Stamina: " + targetPlayerStamina));
-        player.sendMessage(Message.raw("Mana: " + targetPlayerMana));
+        player.sendMessage(Message.raw("Health: " + (targetPlayerHealth != null ? targetPlayerHealth + "(" + targetPlayerHealth.asPercentage() + ")" : "Unknown")));
+        player.sendMessage(Message.raw("Stamina: " + (targetPlayerStamina != null ? targetPlayerStamina + "(" + targetPlayerStamina.asPercentage() + ")" : "Unknown")));
+        player.sendMessage(Message.raw("Mana: " + (targetPlayerMana != null ? targetPlayerMana + "(" + targetPlayerMana.asPercentage() + ")" : "Unknown")));
     }
 }
