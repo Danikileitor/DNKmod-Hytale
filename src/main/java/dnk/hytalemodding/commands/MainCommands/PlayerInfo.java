@@ -49,6 +49,8 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         EntityStatMap targetPlayerStats = store.getComponent(targetRef, EntityStatMap.getComponentType());
         EntityStatValue targetPlayerHealth = targetPlayerStats.get(DefaultEntityStatTypes.getHealth());
         EntityStatValue targetPlayerStamina = targetPlayerStats.get(DefaultEntityStatTypes.getStamina());
+        EntityStatValue targetPlayerSignatureEnergy = targetPlayerStats.get(DefaultEntityStatTypes.getSignatureEnergy());
+        EntityStatValue targetPlayerOxygen = targetPlayerStats.get(DefaultEntityStatTypes.getOxygen());
         EntityStatValue targetPlayerMana = targetPlayerStats.get(DefaultEntityStatTypes.getMana());
         EntityStatValue targetPlayerAmmo = targetPlayerStats.get(DefaultEntityStatTypes.getAmmo());
 
@@ -67,6 +69,9 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
 
         player.sendMessage(Message.raw("Health: " + (targetPlayerHealth != null ? targetPlayerHealth + "(" + targetPlayerHealth.asPercentage() + ")" : "Unknown")));
         player.sendMessage(Message.raw("Stamina: " + (targetPlayerStamina != null ? targetPlayerStamina + "(" + targetPlayerStamina.asPercentage() + ")" : "Unknown")));
+        player.sendMessage(Message.raw(
+                "Signature Energy: " + (targetPlayerSignatureEnergy != null ? targetPlayerSignatureEnergy + "(" + targetPlayerSignatureEnergy.asPercentage() + ")" : "Unknown")));
+        player.sendMessage(Message.raw("Oxygen: " + (targetPlayerOxygen != null ? targetPlayerOxygen + "(" + targetPlayerOxygen.asPercentage() + ")" : "Unknown")));
         player.sendMessage(Message.raw("Mana: " + (targetPlayerMana != null ? targetPlayerMana + "(" + targetPlayerMana.asPercentage() + ")" : "Unknown")));
         player.sendMessage(Message.raw("Ammo: " + (targetPlayerAmmo != null ? targetPlayerAmmo + "(" + targetPlayerAmmo.asPercentage() + ")" : "Unknown")));
     }
