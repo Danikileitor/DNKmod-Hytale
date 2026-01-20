@@ -46,6 +46,7 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         player.sendMessage(Message.raw("UUID: " + targetComponent.getUuid()));
         player.sendMessage(Message.raw("Name: " + targetPlayer.getDisplayName()));
         player.sendMessage(Message.raw("GameMode: " + targetPlayer.getGameMode()));
+        player.sendMessage(Message.raw("Language: " + playerRef.getLanguage()));
 
         player.sendMessage(Message.raw("Position: " + targetTransform.getPosition()));
         if (targetWorld != null) {
@@ -54,6 +55,5 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         } else {
             player.sendMessage(Message.raw("World: Unknown"));
         }
-
     }
 }
