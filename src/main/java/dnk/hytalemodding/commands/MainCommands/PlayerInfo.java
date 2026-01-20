@@ -45,7 +45,6 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         TransformComponent targetTransform = store.getComponent(targetRef, TransformComponent.getComponentType());
         World targetWorld = targetPlayer.getWorld();
 
-        @SuppressWarnings("null")
         EntityStatMap targetPlayerStats = store.getComponent(targetRef, EntityStatMap.getComponentType());
         EntityStatValue targetPlayerHealth = targetPlayerStats.get(DefaultEntityStatTypes.getHealth());
         EntityStatValue targetPlayerStamina = targetPlayerStats.get(DefaultEntityStatTypes.getStamina());
