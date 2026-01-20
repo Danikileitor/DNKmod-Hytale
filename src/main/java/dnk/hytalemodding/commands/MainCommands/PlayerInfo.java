@@ -67,12 +67,18 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
             player.sendMessage(Message.raw("World: Unknown"));
         }
 
-        player.sendMessage(Message.raw("Health: " + (targetPlayerHealth != null ? targetPlayerHealth + "(" + targetPlayerHealth.asPercentage() + ")" : "Unknown")));
-        player.sendMessage(Message.raw("Stamina: " + (targetPlayerStamina != null ? targetPlayerStamina + "(" + targetPlayerStamina.asPercentage() + ")" : "Unknown")));
         player.sendMessage(Message.raw(
-                "Signature Energy: " + (targetPlayerSignatureEnergy != null ? targetPlayerSignatureEnergy + "(" + targetPlayerSignatureEnergy.asPercentage() + ")" : "Unknown")));
-        player.sendMessage(Message.raw("Oxygen: " + (targetPlayerOxygen != null ? targetPlayerOxygen + "(" + targetPlayerOxygen.asPercentage() + ")" : "Unknown")));
-        player.sendMessage(Message.raw("Mana: " + (targetPlayerMana != null ? targetPlayerMana + "(" + targetPlayerMana.asPercentage() + ")" : "Unknown")));
-        player.sendMessage(Message.raw("Ammo: " + (targetPlayerAmmo != null ? targetPlayerAmmo + "(" + targetPlayerAmmo.asPercentage() + ")" : "Unknown")));
+                "Health: " + (targetPlayerHealth != null ? targetPlayerHealth + "/" + targetPlayerHealth.getMax() + "(" + targetPlayerHealth.asPercentage() + ")" : "Unknown")));
+        player.sendMessage(Message.raw("Stamina: "
+                + (targetPlayerStamina != null ? targetPlayerStamina + "/" + targetPlayerStamina.getMax() + "(" + targetPlayerStamina.asPercentage() + ")" : "Unknown")));
+        player.sendMessage(Message.raw("Signature Energy: " + (targetPlayerSignatureEnergy != null
+                ? targetPlayerSignatureEnergy + "/" + targetPlayerSignatureEnergy.getMax() + "(" + targetPlayerSignatureEnergy.asPercentage() + ")"
+                : "Unknown")));
+        player.sendMessage(Message.raw(
+                "Oxygen: " + (targetPlayerOxygen != null ? targetPlayerOxygen + "/" + targetPlayerOxygen.getMax() + "(" + targetPlayerOxygen.asPercentage() + ")" : "Unknown")));
+        player.sendMessage(
+                Message.raw("Mana: " + (targetPlayerMana != null ? targetPlayerMana + "/" + targetPlayerMana.getMax() + "(" + targetPlayerMana.asPercentage() + ")" : "Unknown")));
+        player.sendMessage(
+                Message.raw("Ammo: " + (targetPlayerAmmo != null ? targetPlayerAmmo + "/" + targetPlayerAmmo.getMax() + "(" + targetPlayerAmmo.asPercentage() + ")" : "Unknown")));
     }
 }
