@@ -1,0 +1,18 @@
+dnk.error.targetPlayerNotFound = Jugador objetivo no encontrado.
+dnk.error.fetchingTargetPlayer = Ocurrió un error al obtener el jugador objetivo.
+dnk.error.unknown = Desconocido
+dnk.welcome.firstSpawn = ¡Bienvenido al servidor {0}!
+dnk.welcome.returning = Bienvenido de nuevo {0}
+dnk.info.uuid = UUID: {0}
+dnk.info.name = Nombre: {0}
+dnk.info.gamemode = Modo de juego: {0}
+dnk.info.language = Idioma: {0}
+dnk.info.position = Posición: X = {0}, Y = {1}, Z = {2}
+dnk.info.world = Mundo: {0}
+dnk.info.playerCount = Jugadores en línea: {0}
+dnk.info.health = Salud: {0}/{1} ({2})
+dnk.info.stamina = Energía: {0}/{1} ({2})
+dnk.info.signatureEnergy = Energía especial: {0}/{1} ({2})
+dnk.info.oxygen = Oxígeno: {0}/{1} ({2})
+dnk.info.mana = Maná: {0}/{1} ({2})
+dnk.info.ammo = Munición: {0}/{1} ({2})

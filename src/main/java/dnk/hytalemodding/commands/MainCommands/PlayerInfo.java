@@ -32,11 +32,11 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
 
         try {
             if (targetRef == null) {
-                player.sendMessage(Message.raw("Target player not found."));
+                player.sendMessage(Message.translation("server.dnk.error.targetPlayerNotFound"));
                 return;
             }
         } catch (Exception e) {
-            player.sendMessage(Message.raw("An error occurred while fetching target player."));
+            player.sendMessage(Message.translation("server.dnk.error.fetchingTargetPlayer"));
             return;
         }
 
@@ -53,17 +53,18 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
         EntityStatValue targetPlayerMana = targetPlayerStats.get(DefaultEntityStatTypes.getMana());
         EntityStatValue targetPlayerAmmo = targetPlayerStats.get(DefaultEntityStatTypes.getAmmo());
 
-        player.sendMessage(Message.raw("UUID: " + targetComponent.getUuid()));
-        player.sendMessage(Message.raw("Name: " + targetPlayer.getDisplayName()));
-        player.sendMessage(Message.raw("GameMode: " + targetPlayer.getGameMode()));
-        player.sendMessage(Message.raw("Language: " + playerRef.getLanguage()));
+        player.sendMessage(Message.translation("server.dnk.info.uuid").param("0", targetComponent.getUuid().toString()));
+        player.sendMessage(Message.translation("server.dnk.info.name").param("0", targetPlayer.getDisplayName()));
+        player.sendMessage(Message.translation("server.dnk.info.gamemode").param("0", targetPlayer.getGameMode().toString()));
+        player.sendMessage(Message.translation("server.dnk.info.language").param("0", playerRef.getLanguage()));
 
-        player.sendMessage(Message.raw("Position: " + targetTransform.getPosition()));
+        player.sendMessage(Message.translation("server.dnk.info.position").param("0", targetTransform.getPosition().getX()).param("1", targetTransform.getPosition().getY())
+                .param("2", targetTransform.getPosition().getZ()));
         if (targetWorld != null) {
-            player.sendMessage(Message.raw("World: " + targetWorld.getName()));
-            player.sendMessage(Message.raw("Players: " + targetWorld.getPlayerCount()));
+            player.sendMessage(Message.translation("server.dnk.info.world").param("0", targetWorld.getName()));
+            player.sendMessage(Message.translation("server.dnk.info.playerCount").param("0", targetWorld.getPlayerCount()));
         } else {
-            player.sendMessage(Message.raw("World: Unknown"));
+            player.sendMessage(Message.translation("server.dnk.info.world").param("0", Message.translation("dnk.error.unknown")));
         }
 
         player.sendMessage(Message.raw(

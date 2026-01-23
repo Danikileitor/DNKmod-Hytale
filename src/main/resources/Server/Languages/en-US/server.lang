@@ -1,0 +1,18 @@
+dnk.error.targetPlayerNotFound = Target player not found.
+dnk.error.fetchingTargetPlayer = An error occurred while fetching target player.
+dnk.error.unknown = Unknown
+dnk.welcome.firstSpawn = Welcome to the server {0}!
+dnk.welcome.returning = Welcome back {0}
+dnk.info.uuid = UUID: {0}
+dnk.info.name = Name: {0}
+dnk.info.gamemode = GameMode: {0}
+dnk.info.language = Language: {0}
+dnk.info.position = Position: X = {0}, Y = {1}, Z = {2}
+dnk.info.world = World: {0}
+dnk.info.playerCount = Players online: {0}
+dnk.info.health = Health: {0}/{1} ({2})
+dnk.info.stamina = Stamina: {0}/{1} ({2})
+dnk.info.signatureEnergy = Signature Energy: {0}/{1} ({2})
+dnk.info.oxygen = Oxygen: {0}/{1} ({2})
+dnk.info.mana = Mana: {0}/{1} ({2})
+dnk.info.ammo = Ammo: {0}/{1} ({2})

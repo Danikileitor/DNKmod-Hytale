@@ -14,7 +14,9 @@
   "ServerVersion": "*",
   "Dependencies": {},
   "OptionalDependencies": {},
+  "LoadBefore": {},
   "DisabledByDefault": false,
-  "IncludesAssetPack": false,
+  "IncludesAssetPack": true,
+  "SubPlugins": {},
   "Main": "dnk.hytalemodding.Main"
 }
