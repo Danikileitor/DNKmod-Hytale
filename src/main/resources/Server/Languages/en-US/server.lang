@@ -3,6 +3,7 @@ dnk.error.fetchingTargetPlayer = An error occurred while fetching target player.
 dnk.error.unknown = Unknown
 dnk.welcome.firstSpawn = Welcome to the server {0}!
 dnk.welcome.returning = Welcome back {0}
+dnk.info.desc = Get player info
 dnk.info.uuid = UUID: {0}
 dnk.info.name = Name: {0}
 dnk.info.gamemode = GameMode: {0}
