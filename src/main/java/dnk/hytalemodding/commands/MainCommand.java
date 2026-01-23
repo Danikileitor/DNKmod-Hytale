@@ -7,7 +7,7 @@ import dnk.hytalemodding.commands.MainCommands.PlayerInfo;
 public class MainCommand extends AbstractCommandCollection {
 
     public MainCommand() {
-        super("dnk", "Main command");
+        super("dnk", "dnk.main.desc");
         this.addSubCommand(new PlayerInfo());
     }
 }

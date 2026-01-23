@@ -3,6 +3,7 @@ dnk.error.fetchingTargetPlayer = Ocurrió un error al obtener el jugador objetiv
 dnk.error.unknown = Desconocido
 dnk.welcome.firstSpawn = ¡Bienvenido al servidor {0}!
 dnk.welcome.returning = Bienvenido de nuevo {0}
+dnk.main.desc = Comando principal
 dnk.info.desc = Obtener información de jugador
 dnk.info.uuid = UUID: {0}
 dnk.info.name = Nombre: {0}
