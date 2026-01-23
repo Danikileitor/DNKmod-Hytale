@@ -9,9 +9,9 @@ public class JoinEvent {
     public static void onPlayerReady(PlayerReadyEvent event) {
         Player player = event.getPlayer();
         if (player.isFirstSpawn()) {
-            player.sendMessage(Message.raw("Welcome to the server " + player.getDisplayName() + "!"));
+            player.sendMessage(Message.translation("server.commands.dnk.welcome.firstSpawn").param("0", player.getDisplayName()));
         } else {
-            player.sendMessage(Message.raw("Welcome " + player.getDisplayName()));
+            player.sendMessage(Message.translation("server.commands.dnk.welcome.returning").param("0", player.getDisplayName()));
         }
     }
 }
