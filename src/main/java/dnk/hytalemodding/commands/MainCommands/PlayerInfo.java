@@ -67,18 +67,52 @@ public class PlayerInfo extends AbstractTargetPlayerCommand {
             player.sendMessage(Message.translation("server.dnk.info.world").param("0", Message.translation("dnk.error.unknown")));
         }
 
-        player.sendMessage(Message.raw(
-                "Health: " + (targetPlayerHealth != null ? targetPlayerHealth + "/" + targetPlayerHealth.getMax() + "(" + targetPlayerHealth.asPercentage() + ")" : "Unknown")));
-        player.sendMessage(Message.raw("Stamina: "
-                + (targetPlayerStamina != null ? targetPlayerStamina + "/" + targetPlayerStamina.getMax() + "(" + targetPlayerStamina.asPercentage() + ")" : "Unknown")));
-        player.sendMessage(Message.raw("Signature Energy: " + (targetPlayerSignatureEnergy != null
-                ? targetPlayerSignatureEnergy + "/" + targetPlayerSignatureEnergy.getMax() + "(" + targetPlayerSignatureEnergy.asPercentage() + ")"
-                : "Unknown")));
-        player.sendMessage(Message.raw(
-                "Oxygen: " + (targetPlayerOxygen != null ? targetPlayerOxygen + "/" + targetPlayerOxygen.getMax() + "(" + targetPlayerOxygen.asPercentage() + ")" : "Unknown")));
-        player.sendMessage(
-                Message.raw("Mana: " + (targetPlayerMana != null ? targetPlayerMana + "/" + targetPlayerMana.getMax() + "(" + targetPlayerMana.asPercentage() + ")" : "Unknown")));
-        player.sendMessage(
-                Message.raw("Ammo: " + (targetPlayerAmmo != null ? targetPlayerAmmo + "/" + targetPlayerAmmo.getMax() + "(" + targetPlayerAmmo.asPercentage() + ")" : "Unknown")));
+        if (targetPlayerHealth != null) {
+            player.sendMessage(Message.translation("server.dnk.info.health").param("0", String.valueOf(targetPlayerHealth)).param("1", String.valueOf(targetPlayerHealth.getMax()))
+                    .param("2", targetPlayerHealth.asPercentage()));
+        } else {
+            player.sendMessage(Message.translation("server.dnk.info.health").param("0", Message.translation("dnk.error.unknown"))
+                    .param("1", Message.translation("dnk.error.unknown")).param("2", Message.translation("dnk.error.unknown")));
+        }
+
+        if (targetPlayerStamina != null) {
+            player.sendMessage(Message.translation("server.dnk.info.stamina").param("0", String.valueOf(targetPlayerStamina))
+                    .param("1", String.valueOf(targetPlayerStamina.getMax())).param("2", targetPlayerStamina.asPercentage()));
+        } else {
+            player.sendMessage(Message.translation("server.dnk.info.stamina").param("0", Message.translation("dnk.error.unknown"))
+                    .param("1", Message.translation("dnk.error.unknown")).param("2", Message.translation("dnk.error.unknown")));
+        }
+
+        if (targetPlayerSignatureEnergy != null) {
+            player.sendMessage(Message.translation("server.dnk.info.signatureEnergy").param("0", String.valueOf(targetPlayerSignatureEnergy))
+                    .param("1", String.valueOf(targetPlayerSignatureEnergy.getMax())).param("2", targetPlayerSignatureEnergy.asPercentage()));
+        } else {
+            player.sendMessage(Message.translation("server.dnk.info.signatureEnergy").param("0", Message.translation("dnk.error.unknown"))
+                    .param("1", Message.translation("dnk.error.unknown")).param("2", Message.translation("dnk.error.unknown")));
+        }
+
+        if (targetPlayerOxygen != null) {
+            player.sendMessage(Message.translation("server.dnk.info.oxygen").param("0", String.valueOf(targetPlayerOxygen)).param("1", String.valueOf(targetPlayerOxygen.getMax()))
+                    .param("2", targetPlayerOxygen.asPercentage()));
+        } else {
+            player.sendMessage(Message.translation("server.dnk.info.oxygen").param("0", Message.translation("dnk.error.unknown"))
+                    .param("1", Message.translation("dnk.error.unknown")).param("2", Message.translation("dnk.error.unknown")));
+        }
+
+        if (targetPlayerMana != null) {
+            player.sendMessage(Message.translation("server.dnk.info.mana").param("0", String.valueOf(targetPlayerMana)).param("1", String.valueOf(targetPlayerMana.getMax()))
+                    .param("2", targetPlayerMana.asPercentage()));
+        } else {
+            player.sendMessage(Message.translation("server.dnk.info.mana").param("0", Message.translation("dnk.error.unknown")).param("1", Message.translation("dnk.error.unknown"))
+                    .param("2", Message.translation("dnk.error.unknown")));
+        }
+
+        if (targetPlayerAmmo != null) {
+            player.sendMessage(Message.translation("server.dnk.info.ammo").param("0", String.valueOf(targetPlayerAmmo)).param("1", String.valueOf(targetPlayerAmmo.getMax()))
+                    .param("2", targetPlayerAmmo.asPercentage()));
+        } else {
+            player.sendMessage(Message.translation("server.dnk.info.ammo").param("0", Message.translation("dnk.error.unknown")).param("1", Message.translation("dnk.error.unknown"))
+                    .param("2", Message.translation("dnk.error.unknown")));
+        }
     }
 }
