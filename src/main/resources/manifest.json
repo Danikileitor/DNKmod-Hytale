@@ -1,7 +1,7 @@
 {
   "Group": "dnk.hytalemodding",
   "Name": "DNKmod-Hytale",
-  "Version": "${version}",
+  "Version": "1.0.0",
   "Description": "Testing Hytale modding capabilities.",
   "Authors": [
     {
