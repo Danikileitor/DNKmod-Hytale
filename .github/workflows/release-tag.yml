@@ -30,4 +30,4 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: false
         files: |
-          /home/runner/work/DNKmod-Hytale/DNKmod-Hytale/target/*.jar
+          ./target/*.jar
