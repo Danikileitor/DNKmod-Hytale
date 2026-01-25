@@ -32,7 +32,9 @@
         <dependency>
             <groupId>com.hypixel.hytale</groupId>
             <artifactId>Server</artifactId>
-            <!-- Replace with latest version, Hytale provides jars for the last five releases -->
+            <!-- Replace with latest version, Hytale provides jars for the last five releases 
+            Release: https://maven.hytale.com/release/com/hypixel/hytale/Server/maven-metadata.xml
+            Pre-Release: https://maven.hytale.com/pre-release/com/hypixel/hytale/Server/maven-metadata.xml -->
             <version>2026.01.24-6e2d4fc36</version>
             <scope>provided</scope>
         </dependency>
