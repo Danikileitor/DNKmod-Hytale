@@ -22,6 +22,6 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Release tag
-      run: gh release create --notes-from-tag --generate-notes ${{ github.ref_name }} target/DNKmod-Hytale-*.jar --repo Danikileitor/DNKmod-Hytale
+      run: gh release create --notes-from-tag --generate-notes ${{ github.ref_name }} target/dnkmod-hytale-*.jar --repo Danikileitor/DNKmod-Hytale
       env:
         GH_TOKEN: ${{ github.token }}
