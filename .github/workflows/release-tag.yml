@@ -32,6 +32,8 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - uses: actions/checkout@v4
@@ -43,5 +45,3 @@ jobs:
 
     - name: Release tag
       run: gh release create --notes "$(git tag -l --format='%(contents)' ${{ github.ref_name }})" --generate-notes ${{ github.ref_name }} target/dnkmod-hytale-*.jar --repo Danikileitor/DNKmod-Hytale
-      env:
-        GH_TOKEN: ${{ github.token }}
