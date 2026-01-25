@@ -27,12 +27,9 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Release tag
-      run: |
-          echo "done!"
-
-    - uses: "marvinpinto/action-automatic-releases@latest"
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        repo_token: "${{ github.token }}"
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: false
         files: |
-          *.jar
+          /home/runner/work/DNKmod-Hytale/DNKmod-Hytale/target/*.jar
