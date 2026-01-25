@@ -22,18 +22,6 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Release tag
-      uses: jreleaser/release-action@v2
-      with:
-        arguments: full-release
+      run: gh release create --notes-from-tag --generate-notes ${{ github.ref_name }} target/DNKmod-Hytale-*.jar --repo Danikileitor/DNKmod-Hytale
       env:
-        JRELEASER_PROJECT_VERSION: ${{ github.ref_name }}
-        JRELEASER_GITHUB_TOKEN: ${{ github.token }}
-
-    - name: JReleaser output
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: jreleaser-release
-        path: |
-          out/jreleaser/trace.log
-          out/jreleaser/output.properties
+        GH_TOKEN: ${{ github.token }}
