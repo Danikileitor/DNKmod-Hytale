@@ -9,9 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
 
     steps:
     - uses: actions/checkout@v4
@@ -25,10 +22,18 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Release tag
-      uses: "marvinpinto/action-automatic-releases@latest"
+      uses: jreleaser/release-action@v2
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        prerelease: false
-        files: |
-          LICENSE
-          ./target/*.jar
+        arguments: full-release
+      env:
+        JRELEASER_PROJECT_VERSION: ${{ github.ref_name }}
+        JRELEASER_GITHUB_TOKEN: ${{ github.token }}
+
+    - name: JReleaser output
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: jreleaser-release
+        path: |
+          out/jreleaser/trace.log
+          out/jreleaser/output.properties
