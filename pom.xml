@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dnk.hytalemodding</groupId>
-    <artifactId>DNKmod-Hytale</artifactId>
+    <artifactId>dnkmod-hytale</artifactId>
     <version>1.0.0</version>
     <name>DNKmod-Hytale</name>
 
