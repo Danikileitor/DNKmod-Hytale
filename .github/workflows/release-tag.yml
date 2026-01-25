@@ -43,7 +43,11 @@ jobs:
         name: jar-artifact
         path: target
 
+    - name: Get tag message
+      id: tag_message
+      run: echo "message=$(git tag -l --format='%(contents)' ${{ github.ref_name }})" >> $GITHUB_OUTPUT
+
     - name: Release tag
-      run: gh release create --notes "$(git tag -l --format='%(contents)' ${{ github.ref_name }})" --generate-notes ${{ github.ref_name }} target/dnkmod-hytale-*.jar --repo Danikileitor/DNKmod-Hytale
+      run: gh release create --notes "${{ steps.tag_message.outputs.message }}" --generate-notes ${{ github.ref_name }} target/dnkmod-hytale-*.jar --repo Danikileitor/DNKmod-Hytale
       env:
         GH_TOKEN: ${{ github.token }}
