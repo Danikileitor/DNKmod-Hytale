@@ -19,3 +19,5 @@ commands.dnk.playerinfo.oxygen = Oxygen: {0}/{1} ({2})
 commands.dnk.playerinfo.mana = Mana: {0}/{1} ({2})
 commands.dnk.playerinfo.ammo = Ammo: {0}/{1} ({2})
 commands.dnk.universeinfo.desc = Get universe info
+commands.dnk.universeinfo.worlds.title = World list: ({0})
+commands.dnk.universeinfo.worlds = - World: {0} | Players online: {1}
