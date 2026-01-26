@@ -18,3 +18,4 @@ commands.dnk.playerinfo.signatureEnergy = Signature Energy: {0}/{1} ({2})
 commands.dnk.playerinfo.oxygen = Oxygen: {0}/{1} ({2})
 commands.dnk.playerinfo.mana = Mana: {0}/{1} ({2})
 commands.dnk.playerinfo.ammo = Ammo: {0}/{1} ({2})
+commands.dnk.universeinfo.desc = Get universe info
