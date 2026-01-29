@@ -3,13 +3,12 @@
     "Name": "items.dnk.HyHomeCharm.name",
     "Description": "items.dnk.HyHomeCharm.description"
   },
-  "Id": "HyHomeCharm",
   "Icon": "Icons/ItemsGenerated/HyHomeCharm.png",
   "Model": "Resources/Charms/HyHomeCharm.blockymodel",
   "Texture": "Resources/Charms/HyHomeCharm.png",
-  "Quality": "Epic",
+  "Quality": "Tool",
   "MaxStack": 1,
-  "Categories": ["Items.Charms"],
+  "Categories": ["Items.Tools"],
   "Recipe": {
     "TimeSeconds": 1.0,
     "Input": [
@@ -29,19 +28,33 @@
   },
   "Interactions": {
     "Secondary": {
-      "RequireNewClick": false,
+      "Cooldown": {
+        "Id": "HyHomeCharmCD",
+        "Cooldown": 5
+      },
       "Interactions": [
         {
           "Type": "Charging",
-          "FailsOnDamage": true,
-          "Crouching": false,
+          "FailOnDamage": true,
           "HorizontalSpeedMultiplier": 3,
+          "Trails": [
+            {
+              "TrailId": "Wind"
+            }
+          ],
           "Next": {
             "2.5": {
-              "Type": "DNKModWarpHome"
+              "Type": "DNKModWarpHome",
+              "Effects": {
+                "Particles": [
+                  {
+                    "SystemId": "Teleport"
+                  }
+                ],
+                "LocalSoundEventId": "SFX_Portal_Neutral_Teleport_Local"
+              }
             }
-          },
-          "Failed": "Block_Secondary"
+          }
         }
       ]
     }
@@ -51,18 +64,9 @@
     "Rotation": [22.5, 45, 22.5],
     "Translation": [2, -9]
   },
-  "PlayerAnimationsId": {
-    "Parent": "Item",
-    "Animations": {
-      "Charging": {
-        "FirstPerson": "Characters/Animations/Items/Dual_Handed/Battleaxe/Attacks/Guard/Guard_FPS.blockyanim",
-        "ThirdPerson": "Characters/Animations/Items/Dual_Handed/Battleaxe/Attacks/Guard/Guard.blockyanim",
-        "Speed": 1,
-        "Looping": true
-      }
-    }
-  },
+  "PlayerAnimationsId": "Spellbook",
   "Animation": "Resources/Charms/use.blockyanim",
+  "UsePlayerAnimations": true,
   "Utility": {
     "Usable": true
   }
