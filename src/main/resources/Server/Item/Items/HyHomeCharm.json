@@ -38,6 +38,7 @@
           "Type": "Charging",
           "FailOnDamage": true,
           "HorizontalSpeedMultiplier": 3,
+          "Failed": "Simple",
           "Effects": {
             "Trails": [
               {
