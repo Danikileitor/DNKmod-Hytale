@@ -15,15 +15,31 @@
     ],
     "BenchRequirement": [
       {
+        "Id": "Workbench",
         "Type": "Crafting",
         "Categories": ["Workbench_Tools"],
-        "Id": "Workbench",
         "RequiredTierLevel": 2
       }
     ]
   },
   "Interactions": {
-    "Use": { "Interactions": [{ "Type": "DNKModWarpHome" }] }
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "Charging",
+          "FailsOnDamage": true,
+          "HorizontalSpeedMultiplier": 3,
+          "Next": {
+            "2.5": {
+              "Type": "DNKModWarpHome"
+            }
+          },
+          "Failed": {
+            "Type": "Simple"
+          }
+        }
+      ]
+    }
   },
   "IconProperties": {
     "Scale": 1.4,
@@ -31,9 +47,5 @@
     "Translation": [2, -9]
   },
   "PlayerAnimationsId": "Item",
-  "UsePlayerAnimations": true,
-  "Animation": "Resources/Charms/use.blockyanim",
-  "Utility": {
-    "Usable": true
-  }
+  "Animation": "Resources/Charms/use.blockyanim"
 }

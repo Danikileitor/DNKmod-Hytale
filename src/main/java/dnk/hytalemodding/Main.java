@@ -1,11 +1,13 @@
 package dnk.hytalemodding;
 
 import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 
 import dnk.hytalemodding.commands.MainCommand;
 import dnk.hytalemodding.events.JoinEvent;
+import dnk.hytalemodding.interactions.DNKModWarpHome;
 
 import java.util.logging.Level;
 
@@ -28,6 +30,7 @@ public class Main extends JavaPlugin {
         instance = this;
         this.getCommandRegistry().registerCommand(new MainCommand());
         this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, JoinEvent::onPlayerReady);
+        this.getCodecRegistry(Interaction.CODEC).register("DNKModWarpHome", DNKModWarpHome.class, DNKModWarpHome.CODEC);
         getLogger().at(Level.INFO).log("Plugin setup complete!");
     }
 
