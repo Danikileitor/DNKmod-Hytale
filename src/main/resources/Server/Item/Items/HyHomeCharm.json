@@ -3,10 +3,15 @@
     "Name": "items.dnk.HyHomeCharm.name",
     "Description": "items.dnk.HyHomeCharm.description"
   },
+  "Id": "HyHomeCharm",
+  "Icon": "Icons/ItemsGenerated/HyHomeCharm.png",
   "Model": "Resources/Charms/HyHomeCharm.blockymodel",
   "Texture": "Resources/Charms/HyHomeCharm.png",
-  "Icon": "Icons/ItemsGenerated/HyHomeCharm.png",
+  "Quality": "Epic",
+  "MaxStack": 1,
+  "Categories": ["Items.Charms"],
   "Recipe": {
+    "TimeSeconds": 1.0,
     "Input": [
       { "ItemId": "Ingredient_Bar_Gold", "Quantity": 5 },
       { "ItemId": "Ingredient_Bar_Copper", "Quantity": 2 },
@@ -24,16 +29,19 @@
   },
   "Interactions": {
     "Secondary": {
+      "RequireNewClick": false,
       "Interactions": [
         {
           "Type": "Charging",
           "FailsOnDamage": true,
+          "Crouching": false,
           "HorizontalSpeedMultiplier": 3,
           "Next": {
             "2.5": {
               "Type": "DNKModWarpHome"
             }
-          }
+          },
+          "Failed": "Block_Secondary"
         }
       ]
     }
@@ -43,8 +51,17 @@
     "Rotation": [22.5, 45, 22.5],
     "Translation": [2, -9]
   },
-  "PlayerAnimationsId": "Item",
-  "UsePlayerAnimations": true,
+  "PlayerAnimationsId": {
+    "Parent": "Item",
+    "Animations": {
+      "Charging": {
+        "FirstPerson": "Characters/Animations/Items/Dual_Handed/Battleaxe/Attacks/Guard/Guard_FPS.blockyanim",
+        "ThirdPerson": "Characters/Animations/Items/Dual_Handed/Battleaxe/Attacks/Guard/Guard.blockyanim",
+        "Speed": 1,
+        "Looping": true
+      }
+    }
+  },
   "Animation": "Resources/Charms/use.blockyanim",
   "Utility": {
     "Usable": true
