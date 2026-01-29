@@ -44,5 +44,9 @@
     "Translation": [2, -9]
   },
   "PlayerAnimationsId": "Item",
-  "Animation": "Resources/Charms/use.blockyanim"
+  "UsePlayerAnimations": true,
+  "Animation": "Resources/Charms/use.blockyanim",
+  "Utility": {
+    "Usable": true
+  }
 }
