@@ -1,0 +1,34 @@
+{
+  "TranslationProperties": {
+    "Name": "items.dnk.HyHomeCharm.name",
+    "Description": "items.dnk.HyHomeCharm.description"
+  },
+  "Model": "Resources/Charms/HyHomeCharm.blockymodel",
+  "Texture": "Resources/Charms/HyHomeCharm.png",
+  "Icon": "Icons/ItemsGenerated/HyHomeCharm.png",
+  "Recipe": {
+    "Input": [
+      { "ItemId": "Ingredient_Bar_Gold", "Quantity": 5 },
+      { "ItemId": "Ingredient_Bar_Iron", "Quantity": 2 },
+      { "ItemId": "Ingredient_Void_Essence", "Quantity": 5 },
+      { "ItemId": "Ingredient_Life_Essence", "Quantity": 5 }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Categories": ["Workbench_Tools"],
+        "Id": "Workbench",
+        "RequiredTierLevel": 2
+      }
+    ]
+  },
+  "Interactions": {
+    "Use": { "Interactions": [{ "Type": "DNKModWarpHome" }] }
+  },
+  "IconProperties": {
+    "Scale": 1.4,
+    "Rotation": [22.5, 45, 22.5],
+    "Translation": [2, -9]
+  },
+  "PlayerAnimationsId": "Item"
+}

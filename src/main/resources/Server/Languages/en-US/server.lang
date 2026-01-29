@@ -27,3 +27,5 @@ commands.dnk.universeinfo.worlds.world = - World: {0} | Players online: {1}
 commands.dnk.universeinfo.playerlist.desc = Players online in the universe
 commands.dnk.universeinfo.playerlist.title = Player list: ({0})
 commands.dnk.universeinfo.playerlist.player = - Player: {0}
+items.dnk.HyHomeCharm.name = MyHome Charm
+items.dnk.HyHomeCharm.description = A charm that teleport you to any of your homes

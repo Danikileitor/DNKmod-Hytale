@@ -27,3 +27,5 @@ commands.dnk.universeinfo.worlds.world = - Mundo: {0} | Jugadores en línea: {1}
 commands.dnk.universeinfo.playerlist.desc = Jugadores en línea en el universo
 commands.dnk.universeinfo.playerlist.title = Lista de jugadores: ({0})
 commands.dnk.universeinfo.playerlist.player = - Jugador: {0}
+items.dnk.HyHomeCharm.name = Amuleto MyHome
+items.dnk.HyHomeCharm.description = Un amuleto que te teletransporta a cualquiera de tus casas
