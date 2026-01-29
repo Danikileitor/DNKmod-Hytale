@@ -30,5 +30,10 @@
     "Rotation": [22.5, 45, 22.5],
     "Translation": [2, -9]
   },
-  "PlayerAnimationsId": "Item"
+  "PlayerAnimationsId": "Item",
+  "UsePlayerAnimations": true,
+  "Animation": "Resources/Charms/use.blockyanim",
+  "Utility": {
+    "Usable": true
+  }
 }
