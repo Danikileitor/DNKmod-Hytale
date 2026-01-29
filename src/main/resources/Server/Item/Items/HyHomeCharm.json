@@ -30,18 +30,21 @@
     "Secondary": {
       "Cooldown": {
         "Id": "HyHomeCharmCD",
-        "Cooldown": 5
+        "Cooldown": 5,
+        "ClickBypass": true
       },
       "Interactions": [
         {
           "Type": "Charging",
           "FailOnDamage": true,
           "HorizontalSpeedMultiplier": 3,
-          "Trails": [
-            {
-              "TrailId": "Wind"
-            }
-          ],
+          "Effects": {
+            "Trails": [
+              {
+                "TrailId": "Wind"
+              }
+            ]
+          },
           "Next": {
             "2.5": {
               "Type": "DNKModWarpHome",
