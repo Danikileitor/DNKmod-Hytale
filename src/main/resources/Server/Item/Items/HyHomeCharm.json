@@ -13,6 +13,9 @@
     "Translation": [5, -13]
   },
   "Quality": "Tool",
+  "Utility": {
+    "Usable": true
+  },
   "MaxStack": 1,
   "Categories": ["Items.Tools"],
   "Recipe": {
@@ -32,8 +35,7 @@
       }
     ]
   },
-  "PlayerAnimationsId": "Spellbook",
-  "Animation": "Resources/Charms/use.blockyanim",
+  "PlayerAnimationsId": "Charms",
   "Interactions": {
     "Secondary": {
       "Cooldown": {
