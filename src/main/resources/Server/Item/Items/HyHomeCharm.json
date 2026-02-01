@@ -5,11 +5,12 @@
   },
   "Model": "Resources/Charms/HyHomeCharm.blockymodel",
   "Texture": "Resources/Charms/HyHomeCharm.png",
+  "ItemSoundSetId": "ISS_Items_Gadget",
   "Icon": "Icons/ItemsGenerated/HyHomeCharm.png",
   "IconProperties": {
-    "Scale": 1.4,
-    "Rotation": [22.5, 45, 22.5],
-    "Translation": [2, -9]
+    "Scale": 1,
+    "Rotation": [22.5, 18, 22.5],
+    "Translation": [5, -13]
   },
   "Quality": "Tool",
   "MaxStack": 1,

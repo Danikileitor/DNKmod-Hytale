@@ -26,6 +26,11 @@
             <id>hytale-pre-release</id>
             <url>https://maven.hytale.com/pre-release</url>
         </repository>
+        <!-- CurseForge Maven repository -->
+        <repository>
+            <id>cursemaven</id>
+            <url>https://www.cursemaven.com</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -37,6 +42,12 @@
             Pre-Release: https://maven.hytale.com/pre-release/com/hypixel/hytale/Server/maven-metadata.xml -->
             <version>2026.01.28-87d03be09</version>
             <scope>provided</scope>
+        </dependency>
+        <!-- Ellie:HyUI API -->
+        <dependency>
+            <groupId>curse.maven</groupId>
+            <artifactId>hyui-1431415</artifactId>
+            <version>7548594</version>
         </dependency>
     </dependencies>
 </project>

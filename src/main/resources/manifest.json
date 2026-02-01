@@ -12,8 +12,12 @@
   ],
   "Website": "https://github.com/Danikileitor/DNKmod-Hytale",
   "ServerVersion": "*",
-  "Dependencies": {},
-  "OptionalDependencies": {},
+  "Dependencies": {
+    "Ellie:HyUI": "*"
+  },
+  "OptionalDependencies": {
+    "Buuz135:MultipleHUD": "*"
+  },
   "DisabledByDefault": false,
   "IncludesAssetPack": true,
   "Main": "dnk.hytalemodding.Main"
